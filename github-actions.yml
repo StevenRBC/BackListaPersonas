@@ -19,6 +19,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
+      - name: DB
+        run: docker-compose up -d
+
       - name: Build
         run: mvn --batch-mode -DskipTests package
 
@@ -34,4 +37,3 @@ jobs:
           reporter: java-junit
           fail-on-error: true
 
-          
